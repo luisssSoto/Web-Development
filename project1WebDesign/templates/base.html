@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Luis Soto's developer portfolio: Python, web development, QA automation, and AI."
+    >
+    {% block styles %}
+        <!-- Bootstrap CSS -->
+        {{ bootstrap.load_css() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css')}}">
+    {% endblock %}
+
+    <title>{% block title %}Luis Soto | Developer Portfolio{% endblock %}</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom stylesheet -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-column flex-md-row
+                    justify-content-between align-items-center gap-3">
+            <p class="mb-0">
+                © {{ 2026 }} Luis Soto. Built with Python and Flask.
+            </p>
+
+            <a href="#home" class="back-to-top">
+                Back to top ↑
+            </a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript for the mobile navbar -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+</body>
+</html>
