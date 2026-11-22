@@ -1,0 +1,416 @@
+
+/* =================================
+   1. GLOBAL VARIABLES
+================================= */
+
+:root {
+    --python-blue: #3776AB;
+    --python-blue-dark: #28547A;
+    --python-yellow: #FFD43B;
+
+    --dark-navy: #202B3C;
+    --background: #F5F7FA;
+    --white: #FFFFFF;
+
+    --text-primary: #263445;
+    --text-secondary: #718096;
+
+    --border-color: #E5EAF0;
+
+    --success: #249B70;
+    --danger: #DC6464;
+
+    --card-radius: 16px;
+    --transition: all 0.25s ease;
+}
+
+
+/* =================================
+   2. GLOBAL STYLES
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-title {
+    font-weight: 750;
+    color: var(--dark-navy);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+}
+
+
+/* =================================
+   3. NAVBAR
+================================= */
+
+.navbar {
+    background-color: var(--white);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+    color: var(--python-blue) !important;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.navbar-brand span {
+    color: var(--python-yellow);
+}
+
+.nav-link {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--python-blue);
+}
+
+
+/* =================================
+   4. BUTTONS
+================================= */
+
+.btn-python {
+    background-color: var(--python-blue);
+    color: var(--white);
+    border: 2px solid var(--python-blue);
+    border-radius: 10px;
+    padding: 11px 22px;
+    font-weight: 650;
+    transition: var(--transition);
+}
+
+.btn-python:hover {
+    background-color: var(--python-blue-dark);
+    border-color: var(--python-blue-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-python-yellow {
+    background-color: var(--python-yellow);
+    color: var(--dark-navy);
+    border: none;
+    border-radius: 10px;
+    padding: 11px 22px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-python-yellow:hover {
+    background-color: #F2C52F;
+    color: var(--dark-navy);
+}
+
+
+/* =================================
+   5. HERO SECTION
+================================= */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        var(--python-blue),
+        var(--python-blue-dark)
+    );
+
+    color: var(--white);
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.hero p {
+    color: #E6F0FA;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.hero-highlight {
+    color: var(--python-yellow);
+}
+
+
+/* =================================
+   6. SEARCH BAR
+================================= */
+
+.search-container {
+    background-color: var(--white);
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.search-container input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* =================================
+   7. FILTER SIDEBAR
+================================= */
+
+.filter-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    position: sticky;
+    top: 20px;
+}
+
+.filter-title {
+    font-weight: 750;
+    margin-bottom: 18px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.form-check-input:checked {
+    background-color: var(--python-blue);
+    border-color: var(--python-blue);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(55,118,171,0.2);
+}
+
+
+/* =================================
+   8. CAFE CARDS
+================================= */
+
+.cafe-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.cafe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(32,43,60,0.10);
+}
+
+.cafe-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.cafe-content {
+    padding: 20px;
+}
+
+.cafe-name {
+    font-size: 1.2rem;
+    font-weight: 750;
+    color: var(--dark-navy);
+}
+
+.cafe-location {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cafe-rating {
+    color: #E5A900;
+    font-weight: 700;
+}
+
+
+/* =================================
+   9. AMENITIES
+================================= */
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.amenity {
+    background-color: #EDF4FA;
+    color: var(--python-blue-dark);
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 650;
+}
+
+.amenity i {
+    margin-right: 4px;
+}
+
+.amenity.available {
+    background-color: #E6F5EE;
+    color: var(--success);
+}
+
+.amenity.unavailable {
+    background-color: #FCECEC;
+    color: var(--danger);
+}
+
+
+/* =================================
+   10. CAFE PRICE AND DETAILS
+================================= */
+
+.cafe-price {
+    color: var(--dark-navy);
+    font-weight: 750;
+    font-size: 1.1rem;
+}
+
+.cafe-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+
+/* =================================
+   11. MAP SECTION
+================================= */
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background-color: #E8EDF2;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* =================================
+   12. FOOTER
+================================= */
+
+.footer {
+    background-color: var(--dark-navy);
+    color: var(--white);
+    padding: 55px 0 25px;
+    margin-top: 80px;
+}
+
+.footer h5 {
+    color: var(--python-yellow);
+    font-weight: 750;
+}
+
+.footer a {
+    color: #C7D2DF;
+    display: block;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    color: var(--python-yellow);
+}
+
+.footer-bottom {
+    border-top: 1px solid #3A4658;
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #AAB6C5;
+    font-size: 0.9rem;
+}
+
+
+/* =================================
+   13. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 991px) {
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .filter-card {
+        position: static;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container .btn {
+        width: 100%;
+    }
+
+    .cafe-image {
+        height: 190px;
+    }
+
+}
