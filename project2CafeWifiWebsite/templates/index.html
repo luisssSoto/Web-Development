@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+
+    <div class="row g-4">
+
+        <!-- Cafe Card -->
+        {% for cafe in all_cafes %}
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="cafe-card">
+
+                <img
+                    src="{{ cafe.img_url }}"
+                    class="cafe-image"
+                    alt="Coffee shop interior"
+                >
+
+                <div class="cafe-content">
+
+                    <div class="d-flex justify-content-between">
+                        <h5 class="cafe-name">{{ cafe.name }}</h5>
+                        <span class="cafe-rating">
+                            <i class="bi bi-star-fill"></i> 4.8
+                        </span>
+                    </div>
+
+                    <p class="cafe-location">
+                        <i class="bi bi-geo-alt"></i>
+                        <a href="{{ cafe.map_url }}" target="_blank">{{cafe.location }}</a>
+                    </p>
+
+                    <div class="amenities">
+
+                        <span class="amenity available">
+                            <i class="bi bi-plug"></i> Sockets
+                        </span>
+
+                        <span class="amenity available">
+                            <i class="bi bi-plug"></i> Toilets
+                        </span>
+
+                        <span class="amenity available">
+                            <i class="bi bi-wifi"></i> Wi-Fi
+                        </span>
+                        
+                        <span class="amenity unavailable">
+                            <i class="bi bi-volume-up"></i> Noisy
+                        </span>
+                        
+                        <span class="amenity available">
+                            <i class="bi bi-chair"></i> Seating
+                        </span>
+
+                        <span class="amenity available">
+                            <i class="bi bi-chair"></i> Coffee Price
+                        </span>
+
+
+                    </div>
+
+                    <div class="cafe-details">
+
+                        <span class="cafe-price">
+                            $$ 
+                        </span>
+
+                        <a href="#" class="btn btn-python btn-sm">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
